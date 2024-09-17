@@ -1,18 +1,18 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
-import pandas as pd
-import json
-from openai import OpenAI
-from uuid import uuid4
 from fastapi import FastAPI, File, UploadFile
 from fastapi.staticfiles import StaticFiles
-import shutil
-import os
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from openai import OpenAI
 from google.cloud import storage
+import pandas as pd
+import json
+from uuid import uuid4
+import shutil
+import os
+
 
 app = FastAPI()
 
@@ -40,9 +40,24 @@ storage_client = storage.Client()
 bucket_name = "graphsvz"  # Replace with your actual bucket name
 bucket = storage_client.bucket(bucket_name)
 
+default_data = {
+    "graph_description": "This section will detail the description of the type of graph after analysis according to your preferences selected above.",
+    "data_description": "This section will cover the description of the data points, labels, axis, colors, legends, data points, error bars after analysis.",
+    "insights": "This section will show the insights about the graph after analysis.",
+    "recommendations": "Recommendations based on your data will be provided here that are tailored to your role and domain.",
+    "further_links": "Relevant links and resources will be listed here.",
+    "img_link": "https://storage.googleapis.com/graphsvz/microloan.png"  # You can provide a default image path
+}
+
+
 @app.get('/api/health')
 async def health():
     return { 'status': 'healthy' }
+
+
+@app.get("/default-data")
+async def get_default_data():
+    return JSONResponse(content=default_data)
 
 
 @app.post("/upload-image")
