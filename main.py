@@ -33,6 +33,9 @@ os.makedirs("uploaded_images", exist_ok=True)
 # Mount the directory to serve images
 app.mount("/images", StaticFiles(directory="uploaded_images"), name="images")
 
+PUBLIC_URL = "http://34.46.190.78:8000"
+
+
 @app.get('/api/health')
 async def health():
     return { 'status': 'healthy' }
@@ -47,7 +50,7 @@ async def upload_image(image: UploadFile = File(...)):
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(image.file, buffer)
     
-    return {"imageUrl": f"http://localhost:8000/images/{unique_filename}"}
+    return {"imageUrl": f"{PUBLIC_URL}/images/{unique_filename}"}
 
 
 literacy_levels = {
@@ -148,6 +151,7 @@ async def analyze(input_data: dict):
     print(input_data)
     img_link = "./images/violin.png"
     img_link = 'https://drive.google.com/uc?export=view&id=1QduyREgYLYeHcvU-pDlUEbXRtzK9E2Q2'
+    img_link = input_data["imageUrl"]
     openai_key = input_data["openaiKey"]
     language = input_data["language"]
     user_role = input_data["userRole"]
