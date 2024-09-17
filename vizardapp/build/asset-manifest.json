@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d01ebc36.css",
+    "main.js": "/static/js/main.0bcf7f81.js",
+    "static/js/453.57b4d8cc.chunk.js": "/static/js/453.57b4d8cc.chunk.js",
+    "static/media/microloan.png": "/static/media/microloan.8ef88525dad3cf2b8669.png",
+    "index.html": "/index.html",
+    "main.d01ebc36.css.map": "/static/css/main.d01ebc36.css.map",
+    "main.0bcf7f81.js.map": "/static/js/main.0bcf7f81.js.map",
+    "453.57b4d8cc.chunk.js.map": "/static/js/453.57b4d8cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d01ebc36.css",
+    "static/js/main.0bcf7f81.js"
+  ]
+}
