@@ -12,13 +12,14 @@ import os
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
+from google.cloud import storage
 
 app = FastAPI()
 
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # React app's address
+    allow_origins=["http://34.46.190.78:8000"],  # React app's address
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -35,6 +36,9 @@ app.mount("/images", StaticFiles(directory="uploaded_images"), name="images")
 
 PUBLIC_URL = "http://34.46.190.78:8000"
 
+storage_client = storage.Client()
+bucket_name = "graphsvz"  # Replace with your actual bucket name
+bucket = storage_client.bucket(bucket_name)
 
 @app.get('/api/health')
 async def health():
@@ -43,14 +47,21 @@ async def health():
 
 @app.post("/upload-image")
 async def upload_image(image: UploadFile = File(...)):
+    # Generate a unique filename
     file_extension = os.path.splitext(image.filename)[1]
     unique_filename = f"{uuid4()}{file_extension}"
-    file_path = f"uploaded_images/{unique_filename}"
+
+    # Create a new blob and upload the file's contents.
+    blob = bucket.blob(unique_filename)
+    blob.upload_from_file(image.file)
+
+    # Make the blob publicly accessible
+    blob.make_public()
+
+    # Construct the public URL
+    public_url = f"https://storage.googleapis.com/{bucket_name}/{unique_filename}"
     
-    with open(file_path, "wb") as buffer:
-        shutil.copyfileobj(image.file, buffer)
-    
-    return {"imageUrl": f"{PUBLIC_URL}/images/{unique_filename}"}
+    return {"imageUrl": public_url}
 
 
 literacy_levels = {
@@ -115,6 +126,7 @@ async def react_app(req: Request, rest_of_path: str):
 def ask_gpt(user_prompt, img_link, openai_key):
     client = OpenAI(api_key=openai_key)
 
+    print(img_link)
     response = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
