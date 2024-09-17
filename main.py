@@ -38,16 +38,16 @@ async def health():
     return { 'status': 'healthy' }
 
 
-#@app.post("/upload-image")
-#async def upload_image(image: UploadFile = File(...)):
-#    file_extension = os.path.splitext(image.filename)[1]
-#    unique_filename = f"{uuid4()}{file_extension}"
-#    file_path = f"uploaded_images/{unique_filename}"
+@app.post("/upload-image")
+async def upload_image(image: UploadFile = File(...)):
+    file_extension = os.path.splitext(image.filename)[1]
+    unique_filename = f"{uuid4()}{file_extension}"
+    file_path = f"uploaded_images/{unique_filename}"
     
-#    with open(file_path, "wb") as buffer:
-#        shutil.copyfileobj(image.file, buffer)
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(image.file, buffer)
     
-#    return {"imageUrl": f"http://localhost:8000/images/{unique_filename}"}
+    return {"imageUrl": f"http://localhost:8000/images/{unique_filename}"}
 
 
 literacy_levels = {
