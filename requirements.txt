@@ -1,0 +1,5 @@
+pandas==2.2.2
+openai==1.37
+tiktoken==0.7.0
+python-multipart
+openai
