@@ -9,6 +9,9 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.staticfiles import StaticFiles
 import shutil
 import os
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from fastapi.requests import Request
 
 app = FastAPI()
 
@@ -21,22 +24,30 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+templates = Jinja2Templates(directory="vizardapp/build")
+# Mounts the `static` folder within the `build` folder to the `/static` route.
+app.mount('/static', StaticFiles(directory="vizardapp/build/static"), 'static')
 # Create a directory to store uploaded images
 os.makedirs("uploaded_images", exist_ok=True)
 
 # Mount the directory to serve images
 app.mount("/images", StaticFiles(directory="uploaded_images"), name="images")
 
-@app.post("/upload-image")
-async def upload_image(image: UploadFile = File(...)):
-    file_extension = os.path.splitext(image.filename)[1]
-    unique_filename = f"{uuid4()}{file_extension}"
-    file_path = f"uploaded_images/{unique_filename}"
+@app.get('/api/health')
+async def health():
+    return { 'status': 'healthy' }
+
+
+#@app.post("/upload-image")
+#async def upload_image(image: UploadFile = File(...)):
+#    file_extension = os.path.splitext(image.filename)[1]
+#    unique_filename = f"{uuid4()}{file_extension}"
+#    file_path = f"uploaded_images/{unique_filename}"
     
-    with open(file_path, "wb") as buffer:
-        shutil.copyfileobj(image.file, buffer)
+#    with open(file_path, "wb") as buffer:
+#        shutil.copyfileobj(image.file, buffer)
     
-    return {"imageUrl": f"http://localhost:8000/images/{unique_filename}"}
+#    return {"imageUrl": f"http://localhost:8000/images/{unique_filename}"}
 
 
 literacy_levels = {
@@ -93,10 +104,10 @@ async def submit_form(user_input: UserInput):
     return {"status": "success", "data": user_input.dict()}
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
+@app.get("/{rest_of_path:path}")
+async def react_app(req: Request, rest_of_path: str):
+    return templates.TemplateResponse('index.html', { 'request': req })
+    
 
 def ask_gpt(user_prompt, img_link, openai_key):
     client = OpenAI(api_key=openai_key)
