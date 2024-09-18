@@ -45,7 +45,7 @@ default_data = {
     "data_description": "This section will cover the description of the data points, labels, axis, colors, legends, data points, error bars after analysis.",
     "insights": "This section will show the insights about the graph after analysis.",
     "recommendations": "Recommendations based on your data will be provided here that are tailored to your role and domain.",
-    "further_links": "Relevant links and resources will be listed here.",
+    "further_readings": "Relevant links and resources will be listed here",
     "img_link": "https://storage.googleapis.com/graphsvz/microloan.png"  # You can provide a default image path
 }
 
@@ -57,6 +57,7 @@ async def health():
 
 @app.get("/default-data")
 async def get_default_data():
+    print(default_data)
     return JSONResponse(content=default_data)
 
 
@@ -115,22 +116,11 @@ The output should have the following schema:
 4- Key: "recommendations"
    Value: The actionables tailored to the their {user_role} as role and {domain} as a domain.
 
-5- Key: "further_links"
-   Value: The further references to studies and topics relevant to the graphs, trends. Don't generate any links, just give a comma-separated list of names and sources. 
+5- Key: "further_readings"
+   Value: The further references to studies and topics relevant to the graphs, trends. Don't generate any hyperlinks, just give a comma-separated list of names and sources. 
 
 Do not return anything except the list of JSON objects of key-value pairs as output. Format as python dictionary.
 """.strip()
-
-class UserInput(BaseModel):
-    name: str
-    email: str
-    message: str
-
-@app.post("/submit")
-async def submit_form(user_input: UserInput):
-    # Process the data (e.g., save to database)
-    print("hitting the backend")
-    return {"status": "success", "data": user_input.dict()}
 
 
 @app.get("/{rest_of_path:path}")
