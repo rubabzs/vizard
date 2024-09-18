@@ -116,7 +116,7 @@ The output should have the following schema:
    Value: The actionables tailored to the their {user_role} as role and {domain} as a domain.
 
 5- Key: "further_links"
-   Value: The further references to studies and topics relevant to the graphs, trends.
+   Value: The further references to studies and topics relevant to the graphs, trends. Don't generate any links, just give a comma-separated list of names and sources. 
 
 Do not return anything except the list of JSON objects of key-value pairs as output. Format as python dictionary.
 """.strip()
