@@ -46,7 +46,7 @@ default_data = {
     "insights": "This section will show the insights about the graph after analysis.",
     "recommendations": "Recommendations based on your data will be provided here that are tailored to your role and domain.",
     "further_readings": "Relevant links and resources will be listed here",
-    "img_link": "https://storage.googleapis.com/graphsvz/microloan.png"  # You can provide a default image path
+    "img_link": "https://storage.googleapis.com/graphsvz/bar_chart.jpg"  # You can provide a default image path
 }
 
 
@@ -128,12 +128,13 @@ async def react_app(req: Request, rest_of_path: str):
     return templates.TemplateResponse('index.html', { 'request': req })
     
 
-def ask_gpt(user_prompt, img_link, openai_key):
+def ask_gpt(user_prompt, img_link):
+    openai_key = os.environ['OPENAI_KEY']
     client = OpenAI(api_key=openai_key)
 
     print(img_link)
     response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gpt-4o",
     messages=[
     {
       "role": "user",
@@ -169,13 +170,13 @@ async def analyze(input_data: dict):
     img_link = "./images/violin.png"
     img_link = 'https://drive.google.com/uc?export=view&id=1QduyREgYLYeHcvU-pDlUEbXRtzK9E2Q2'
     img_link = input_data["imageUrl"]
-    openai_key = input_data["openaiKey"]
+    #openai_key = input_data["openaiKey"]
     language = input_data["language"]
     user_role = input_data["userRole"]
     domain = input_data["domain"]
     dl_level = int(input_data["dvlLevel"])
 
-    r = ask_gpt(content_prompt.format(language=language, user_role=user_role, domain=domain, dl_level=literacy_levels[dl_level]), img_link, openai_key)
+    r = ask_gpt(content_prompt.format(language=language, user_role=user_role, domain=domain, dl_level=literacy_levels[dl_level]), img_link)
     r = clean_json(r)
 
     print(r)
