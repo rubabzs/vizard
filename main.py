@@ -105,10 +105,10 @@ Instructions: Generate the graph content for the user who has following characte
 The output should have the following schema:
 
 1. Key: "graph_description"
-   Value: The description of the graph shown in the image.
+   Value: The description of the graph shown in the image in the form of a single paragraph.
 
 2. Key: "data_description"
-   Value: The description of the labels, axis, colors, legends, data points, error bars.
+   Value: The description of the labels, axis, colors, legends, data points, error bars in the form of a single paragrah.
 
 3. Key: "insights"
    Value: Bullet point wise insights that can be drawn from it given the {domain} as domain and {user_role} as role mentioned.
