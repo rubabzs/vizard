@@ -81,16 +81,11 @@ async def upload_image(image: UploadFile = File(...)):
 
 
 literacy_levels = {
-    1: """The user does not know anything about the graphs and charts. The output should explain the fundamental concepts of the graph in question in easy to understand language.
-          Name the type of graph, explain the components of the graph, how it is used and why it is used. The user cannot consume technical insights and recommendations. The user will really like to enhance their ability to remember this type of chart.
-          Give the user limited insights and recommendations that can be drawn from the graph by applying domain knowledge in an intuitive way. Examples should be added as well according to their domain and role.""",
-    2: """The user knows about different kinds of charts but finds it difficult building relationships between variables given in the chart. The output should be less on explaining the graph in question
-          rather why it's used here and how to interpret the relationships between the variables. The user will really like to learn how to build relationships between different variables. The output should take into account domain and role.""",
-    3: """The user can build relationships between 2 variables but finds it difficult to build relationship between more variables. The output so all the sections should be balanced with knowledge. The output should take into account domain and role""",
-    4: """The user can build relationships between more than 2 variables but finds it difficult to apply their domain knowledge on the graph and draw insights so the focus should be on layering in the domain knowledge to the
-    graph. The output should take into account domain and role""",
-    5: """The user can apply domain knowledge and derive insights and actionables from the graphs. The output should include inter and intra domain informations, market trends,
-     questions for user to think about in insights and recommendations section. The further links sections should have further readings as well. The output should take into account domain and role"""
+    1: """The user does not know anything about data visualizations such as graphs and charts. The output should explain the fundamental concepts of the visualization in question in language that is easy to understand. Name the type of visualization, explain its components, and explain how and why it is used. The user cannot consume technical insights and recommendations. The user would really like to enhance their ability to remember this type of chart. Give the user some limited insights and recommendations that can be drawn from the visualization by applying their domain knowledge in an intuitive way. Examples should be added as well according to their domain and role.""",
+    2: """The user knows about different kinds of visualizations but finds it difficult to build relationships between the variables given in them. The output should focus less on explaining the graph in question and more on why it's used here and how to interpret the relationships between the variables. The user would really like to learn how to build relationships between different variables. The output should take into account their domain and role.""",
+    3: """The user can build relationships between two variables but finds it difficult to build relationship between more variables. The output of all the sections should be balanced with knowledge. The output should take into account the user's domain and role.""",
+    4: """The user can build relationships between more than two variables but finds it difficult to apply their domain knowledge to the visualization. The output should be focused on incorporating domain knowledge into the graph. The output should take into account the user's domain and role.""",
+    5: """The user can apply domain knowledge and derive insights and recommendations from the visualizations. The output should include inter- and intra-domain information, market trends, and questions for the user to think about in the insights and recommendations sections. The further readings section should be technically resourceful. The output should take into account the user's domain and role."""
 }
 
 content_prompt = """
