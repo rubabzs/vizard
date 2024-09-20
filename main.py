@@ -94,32 +94,32 @@ literacy_levels = {
 }
 
 content_prompt = """
-Task: Your task is to generate helpful educational content around the graph image that is uploaded. The content should be tailored to the individual using them, provided to you as input. The output should be content around the graph broken down into multiple sections.
+Task: Your task is to understand and explain the graph image that is uploaded and generate helpful educational content around it. The content should be tailored to the individual using this system and the output should be content around the graph broken down into multiple sections in a Python dictionary. 
 
-Instructions: Generate the graph content for the user who has following characteristics. The detail level of the ouput should be dictated by the user's ability.
+Instructions: Generate the graph content for the user who has the following characteristics. The detail level of the ouput should be dictated by the user's ability.
 
-1. Understands {language} as their preferred language,
-2. Have role of {user_role} at their workplace, and the {domain} is the industry they work in.
+1. The user understands {language} as their preferred language,
+2. The user has a role of {user_role} at their workplace, and the {domain} is the industry they work in.
 3. {dl_level}
 
 The output should have the following schema:
 
 1. Key: "graph_description"
-   Value: The description of the graph shown in the image in the form of a single paragraph.
+   Value: A string containing the description of the graph shown in the image in the form of a single paragraph.
 
 2. Key: "data_description"
-   Value: The description of the labels, axis, colors, legends, data points, error bars in the form of a single paragrah.
+   Value: A string containing the description of the labels, axis, colors, legends, data points, error bars in the form of a single paragrah.
 
 3. Key: "insights"
-   Value: Bullet point wise insights that can be drawn from it given the {domain} as domain and {user_role} as role mentioned.
+   Value: A string containing bullet points of insights that can be drawn from it given the {domain} as domain and {user_role} as the user's role.
 
-4- Key: "recommendations"
-   Value: The actionables tailored to the their {user_role} as role and {domain} as a domain.
+4. Key: "recommendations"
+   Value: A string containing bullet points of the actionable information tailored to a user with arole of {user_role} in {domain} domain.
 
-5- Key: "further_readings"
-   Value: The further references to studies and topics relevant to the graphs, trends. Don't generate any hyperlinks, just give a comma-separated list of names and sources. 
+5. Key: "further_readings"
+   Value: A string containing bullet points of further references to studies and topics relevant to the graphs and trends. Do not generate any hyperlinks, just give a list of useful search terms for further research.
 
-Do not return anything except the list of JSON objects of key-value pairs as output. Format as python dictionary.
+Do not return anything except the above key-value pairs as a Python dictionary.
 """.strip()
 
 
