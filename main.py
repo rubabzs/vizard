@@ -106,14 +106,14 @@ The output should have the following schema:
    Value: A string containing the description of the labels, axis, colors, legends, data points, error bars in the form of a single paragrah.
 
 3. Key: "insights"
-   Value: A string containing bullet points of insights that can be drawn from it given the {domain} as domain and {user_role} as the user's role. Use comma as a delimeter for separating bullets.
+   Value: A string containing bullet points of insights that can be drawn from it given the {domain} as domain and {user_role} as the user's role. Use dot as a delimeter for separating bullets.
 
 4. Key: "recommendations"
-   Value: A string containing bullet points of the actionable information tailored to a user with arole of {user_role} in {domain} domain.  Use comma as a delimeter for separating bullets.
+   Value: A string containing bullet points of the actionable information tailored to a user with arole of {user_role} in {domain} domain.  Use dot as a delimeter for separating bullets.
 
 
 5. Key: "further_readings"
-   Value: A string containing bullet points of further references to studies and topics relevant to the graphs and trends. Do not generate any hyperlinks, just give a list of useful search terms for further research. Use comma as a delimeter for separating bullets.
+   Value: A string containing bullet points of further references to studies and topics relevant to the graphs and trends. Do not generate any hyperlinks, just give a list of useful search terms for further research. Use dot as a delimeter for separating bullets.
 
 
 Do not return anything except the above key-value pairs as a Python dictionary.
