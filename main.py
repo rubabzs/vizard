@@ -19,7 +19,7 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://34.46.190.78:8000"],  # React app's address
+    allow_origins=["http://34.173.155.37:8000"],  # React app's address
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -34,7 +34,7 @@ os.makedirs("uploaded_images", exist_ok=True)
 # Mount the directory to serve images
 app.mount("/images", StaticFiles(directory="uploaded_images"), name="images")
 
-PUBLIC_URL = "http://34.46.190.78:8000"
+PUBLIC_URL = "https://34.173.155.37"
 
 storage_client = storage.Client()
 bucket_name = "graphsvz"  # Replace with your actual bucket name
