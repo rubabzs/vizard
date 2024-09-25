@@ -160,6 +160,9 @@ def clean_json(gpt_response):
   s = gpt_response.strip().strip('`').strip('python').strip()
   s = s.replace('..', '.').rstrip('.') 
   s = s.replace('. .', '.').rstrip('.') 
+  s = s.replace('*', '').rstrip('.') 
+  s = s.replace('-', '.').rstrip('.') 
+  s = s.replace('_', '.').rstrip('.') 
   output = json.loads(s)
   return output
 
