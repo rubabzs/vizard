@@ -12,6 +12,7 @@ import json
 from uuid import uuid4
 import shutil
 import os
+import re
 
 
 app = FastAPI()
@@ -160,10 +161,10 @@ def clean_json(gpt_response):
   s = gpt_response.strip().strip('`').strip('python').strip()
   s = s.replace('..', '.').rstrip('.') 
   s = s.replace('. .', '.').rstrip('.') 
-  s = s.replace('*', '').rstrip('.') 
-  s = s.replace('-', '.').rstrip('.') 
-  s = s.replace('_', '.').rstrip('.') 
   output = json.loads(s)
+  output['recommendations'] = re.sub(r'[\*\-_]', '', output["recommendations"])
+  output['insights'] = re.sub(r'[\*\-_]', '', output["insights"])
+  output['further_readings'] = re.sub(r'[\*\-_]', '.', output["further_readings"])
   return output
 
 
