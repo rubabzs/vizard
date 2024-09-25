@@ -158,7 +158,10 @@ def ask_gpt(user_prompt, img_link):
 
 def clean_json(gpt_response):
   s = gpt_response.strip().strip('`').strip('python').strip()
-  return json.loads(s)
+  s = s.replace('..', '.').rstrip('.') 
+  s = s.replace('. .', '.').rstrip('.') 
+  output = json.loads(s)
+  return output
 
 
 @app.post("/analyze")
