@@ -14,11 +14,6 @@ Users can upload an image and have **Vizard** describe the data visualization an
 
 If you're interested in learning more, you can read the **[paper](https://rubabzs.github.io/files/vizard.pdf)** or watch the **[talk](https://www.youtube.com/watch?v=GvphIVJlKgM)**. You can also find all technical details in the **[appendix](https://github.com/rubabzs/vizard/blob/main/vizard_appendix.pdf)**.
 
-
-<p align="center">
-<iframe width="460" height="275" src="https://www.youtube.com/embed/GvphIVJlKgM?si=x93lYtlsEFsDJO5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
 ## Usage
 
 Here is an example of **Vizard** in action. Try it out yourself at **[vizard.info](https://vizard.info/)**!
