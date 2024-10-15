@@ -1,9 +1,27 @@
-# Vizard: Improving Visual Data Literacy with Large Language Models
+![Vizard Dashboard](uploaded_images/header.png)
 
-Data visualizations are commonplace in both our professional and personal lives. From workplace dashboards to our health charts to spending trackers&mdash;we interact with them almost every day. However, despite their crucial role in communicating information to us, many people still struggle to effectively use these tools and draw meaningful insights from them. This issue is particularly acute in developing countries where language barriers and limited technology skills present additional challenges for data visualization literacy. 
+<p align="center">
+    <a href="https://vizard.info">https://vizard.info</a>
+</p>
 
-In this paper, we present Vizard: a dashboard companion that uses large language models to analyze data visualizations for users and explain their elements in their language of choice, as well as providing insights and recommendations based on the trends observed according to the user's industry and job role. We pair this with a novel framework for evaluating visualization literacy which uses procedurally generated questions that are tailored to participants' interests and current visualization literacy level. We make Vizard open source to encourage more research in this direction.
+**Vizard** is a dashboard companion tool that uses LLMs to analyze data visualizations and make them easy to understand for users of all backgrounds. 
 
+Users can upload an image and have **Vizard** describe the data visualization and the trends observed in it, as well as provide insights and recommendations that are tailored to their industry and occupation in their language of choice. Users can also evaluate their data literacy level using our novel framework which uses procedurally generated questions that are customized according to their interests. We make Vizard open source to encourage more research in this direction.
+
+<p align="center">
+    <img src="uploaded_images/system_diagram.png" alt="System Diagram" width="50%">
+</p>
+
+If you're interested in learning more, you can read the [paper](https://rubabzs.github.io/files/vizard.pdf) or watch the [talk](https://www.youtube.com/watch?v=GvphIVJlKgM). You can also find all technical details in the [appendix](https://github.com/rubabzs/vizard/blob/main/vizard_appendix.pdf).
+
+## Usage
+
+
+Here is an example of **Vizard** in action. Try it out yourself at [vizard.info](https://vizard.info/)!
+
+| Input | Output |
+|-------------------------|-------------------------|
+| ![Visualization Example 1](uploaded_images/interface_1.png) | ![Visualization Example 2](uploaded_images/interface_2.png) |
 
 ## Citation
 
