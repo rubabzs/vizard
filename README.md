@@ -12,7 +12,7 @@ Users can upload an image and have **Vizard** describe the data visualization an
     <img src="figures/system_diagram.png" alt="System Diagram" width="50%">
 </p>
 
-If you're interested in learning more, you can read the **[paper](https://rubabzs.github.io/files/vizard.pdf)** or watch the **[talk](https://www.youtube.com/watch?v=GvphIVJlKgM)**. You can also find all technical details in the **[appendix](https://github.com/rubabzs/vizard/blob/main/vizard_appendix.pdf)**.
+If you're interested in learning more, you can read the **[paper](https://rubabzs.github.io/files/vizard.pdf)** or watch the **[talk](https://www.youtube.com/watch?v=GvphIVJlKgM)**. You can also find all technical details in the **[appendix](https://rubabzs.github.io/files/vizard_appendix.pdf)**.
 
 ## Usage
 
