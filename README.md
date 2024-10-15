@@ -6,7 +6,7 @@
 
 **Vizard** is a dashboard companion tool that uses LLMs to analyze data visualizations and make them easy to understand for users of all backgrounds. 
 
-Users can upload an image and have **Vizard** describe the data visualization and the trends observed in it, as well as provide insights and recommendations that are tailored to their industry and occupation in their language of choice. Users can also evaluate their data literacy level using our novel framework which uses procedurally generated questions that are customized according to their interests. We make **Vizard** open source to encourage more research in this direction and continue to add more features to it.
+Users can upload an image and have **Vizard** describe the data visualization and the trends observed in it, as well as provide insights and recommendations that are tailored to their industry and occupation in their language of choice. Users can also evaluate their data literacy level using our novel framework which uses procedurally generated questions that are customized according to their interests. We make continue to add more features to **Vizard** and have made it open source to encourage more research in this direction.
 
 <p align="center">
     <img src="figures/system_diagram.png" alt="System Diagram" width="50%">
