@@ -1,23 +1,27 @@
 ![Vizard Dashboard](uploaded_images/header.png)
 
 <p align="center">
-    <a href="https://vizard.info">https://vizard.info</a>
+    <a href="https://vizard.info"><b>https://vizard.info</b></a>
 </p>
 
 **Vizard** is a dashboard companion tool that uses LLMs to analyze data visualizations and make them easy to understand for users of all backgrounds. 
 
-Users can upload an image and have **Vizard** describe the data visualization and the trends observed in it in their preferred language, as well as provide insights and recommendations that are tailored to their industry and occupation. Users can also evaluate their data literacy level using our novel framework which uses procedurally generated questions that are customized according to their interests. We make Vizard open source to encourage more research in this direction.
+Users can upload an image and have **Vizard** describe the data visualization and the trends observed in it, as well as provide insights and recommendations that are tailored to their industry and occupation in their language of choice. Users can also evaluate their data literacy level using our novel framework which uses procedurally generated questions that are customized according to their interests. We make Vizard open source to encourage more research in this direction.
 
 <p align="center">
     <img src="uploaded_images/system_diagram.png" alt="System Diagram" width="50%">
 </p>
 
-If you're interested in learning more, you can read the [paper](https://rubabzs.github.io/files/vizard.pdf) or watch the [talk](https://www.youtube.com/watch?v=GvphIVJlKgM). You can also find all technical details in the [appendix](https://github.com/rubabzs/vizard/blob/main/vizard_appendix.pdf).
+If you're interested in learning more, you can read the **[paper](https://rubabzs.github.io/files/vizard.pdf)** or watch the **[talk](https://www.youtube.com/watch?v=GvphIVJlKgM)**. You can also find all technical details in the **[appendix](https://github.com/rubabzs/vizard/blob/main/vizard_appendix.pdf)**.
+
+
+<p align="center">
+<iframe width="460" height="275" src="https://www.youtube.com/embed/GvphIVJlKgM?si=x93lYtlsEFsDJO5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 ## Usage
 
-
-Here is an example of **Vizard** in action. Try it out yourself at [vizard.info](https://vizard.info/)!
+Here is an example of **Vizard** in action. Try it out yourself at **[vizard.info](https://vizard.info/)**!
 
 | Input | Output |
 |-------------------------|-------------------------|
@@ -25,7 +29,7 @@ Here is an example of **Vizard** in action. Try it out yourself at [vizard.info]
 
 ## Citation
 
-Please cite the [Vizard paper](https://rubabzs.github.io/files/vizard.pdf) (BigVis @ VLDB 2024) if you find it useful in your work:
+Please cite the **[Vizard paper](https://rubabzs.github.io/files/vizard.pdf)** (BigVis @ VLDB 2024) if you find it useful in your work:
 
 ~~~~
 @InProceedings{sarfraz2024vizard,
