@@ -1,4 +1,4 @@
-![Vizard Dashboard](uploaded_images/header.png)
+![Vizard Dashboard](figures/header.png)
 
 <p align="center">
     <a href="https://vizard.info"><b>https://vizard.info</b></a>
@@ -9,7 +9,7 @@
 Users can upload an image and have **Vizard** describe the data visualization and the trends observed in it, as well as provide insights and recommendations that are tailored to their industry and occupation in their language of choice. Users can also evaluate their data literacy level using our novel framework which uses procedurally generated questions that are customized according to their interests. We make Vizard open source to encourage more research in this direction.
 
 <p align="center">
-    <img src="uploaded_images/system_diagram.png" alt="System Diagram" width="50%">
+    <img src="figures/system_diagram.png" alt="System Diagram" width="50%">
 </p>
 
 If you're interested in learning more, you can read the **[paper](https://rubabzs.github.io/files/vizard.pdf)** or watch the **[talk](https://www.youtube.com/watch?v=GvphIVJlKgM)**. You can also find all technical details in the **[appendix](https://github.com/rubabzs/vizard/blob/main/vizard_appendix.pdf)**.
@@ -20,7 +20,7 @@ Here is an example of **Vizard** in action. Try it out yourself at **[vizard.inf
 
 | Input | Output |
 |-------------------------|-------------------------|
-| ![Visualization Example 1](uploaded_images/interface_1.png) | ![Visualization Example 2](uploaded_images/interface_2.png) |
+| ![Visualization Example 1](figures/interface_1.png) | ![Visualization Example 2](figures/interface_2.png) |
 
 ## Citation
 
